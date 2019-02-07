@@ -1,101 +1,32 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Learn New Vocab Everytime You Open a New Tab</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src *; script-src 'self' data: https://gre.economist.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' data: https://fonts.googleapis.com 'unsafe-inline' 'unsafe-eval'"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+  </head>
 
-<head>
-  <title>Learn New Vocab Everytime You Open a New Tab</title>
-  <meta http-equiv='Content-Security-Policy' content="default-src *; script-src 'self' data: https://gre.economist.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' data: https://fonts.googleapis.com 'unsafe-inline' 'unsafe-eval'">
-  <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' type='text/css' rel='stylesheet'>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #2c3238;
-      font-family: 'Old Standard TT', serif;
-      background: #fdfdfd;
-      height: 100vh;
-      width: 100vw;
-      margin: 0px;
-    }
-
-    .vocab {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 40rem;
-    }
-
-    .vocab__word {
-      display: 'flex';
-      font-size: 4rem;
-      font-weight: 700;
-      line-height: 1;
-      margin: 1rem 0;
-    }
-
-    .vocab__passage {
-      font-size: 1.5rem;
-      margin: 5px;
-    }
-
-    .vocab__definition {
-      font-size: 1rem;
-      font-style: italic;
-      margin: 1rem auto;
-      width: 30rem;
-    }
-
-    .vocab__hr {
-      border: none;
-      border-top: 1px solid #d7dbe0;
-      outline: none;
-      margin: 1rem auto;
-      width: 2rem;
-    }
-
-    .vocab__loading {
-      font-size: 1.25rem;
-    }
-
-    .loader {
-      border: 16px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 16px solid #3498db;
-      width: 120px;
-      height: 120px;
-      -webkit-animation: spin 2s linear infinite;
-      /* Safari */
-      animation: spin 2s linear infinite;
-    }
-    /* Safari */
-
-    @-webkit-keyframes spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(360deg);
-      }
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class='vocab'>
-    <div class="loader"></div>
-    <p class='vocab__loading'> Loading the words... </p>
-  </div>
-  <script src='main.js'></script>
-</body>
-
+  <body>
+    <label
+      style="display: none;"
+      class="switch switch-label switch-pill switch-secondary"
+      id="toggle-dark-mode"
+    >
+      <input class="switch-input" type="checkbox" />
+      <span class="switch-slider"></span>
+    </label>
+    <div class="vocab">
+      <div class="loader"></div>
+      <p class="vocab__loading">Loading the words...</p>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
